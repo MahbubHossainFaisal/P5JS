@@ -14,4 +14,7 @@ class Obstacle {
         rect(this.x,height-this.y2,this.wd,this.y2)
 
     }
+    update(){
+        this.x-=4;
+    }
 }

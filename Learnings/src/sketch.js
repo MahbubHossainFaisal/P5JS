@@ -8,9 +8,13 @@ function setup() {
 
 function draw() {
   background(125,214,247);
+
+  obs.update();
+  obs.show();
+  
   bird.update();
   bird.show();
-  obs.show();
+  
   
 }
 

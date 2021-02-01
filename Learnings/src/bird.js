@@ -31,6 +31,6 @@ class Bird {
     }
 
     up(){
-        this.velocity-=5;
+        this.velocity-=4;
     }
 }
