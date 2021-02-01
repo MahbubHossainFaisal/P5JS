@@ -5,14 +5,27 @@ function setup() {
 }
 
 function draw() {
-  let x=random(0,400);
-  let y=random(0,400)
+  let x=100;
+  let y=200;
  
   
-  fill(255,210,111,80);
+  
   stroke(0,0,0);
-  strokeWeight(2);
-  ellipse(x,y,10,10);
+  fill(255,255,255);
+  ellipse(x,y,30,30);
+  noFill();
+  
+  noStroke();
+  
+  
+  
+  if(mouseX>200 && mouseY<300){
+    fill(0,0,255,80);
+  }
+  if(mouseY>200){
+    fill(255,10,10);
+  }
+  ellipse(x+40,y+50,30,30)
  
   
   
