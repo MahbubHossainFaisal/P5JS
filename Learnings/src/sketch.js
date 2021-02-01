@@ -1,40 +1,23 @@
-var circle1 = {
-  x:200,
-  y:50,
-  diameter:55
-};
 
-var circle2 = {
-  x:150,
-  y:200,
-  diameter:55
-};
-
-function setup()
-{
-    createCanvas(400,300)
-    
-   
+var r=0;
+var g=0;
+var b=0;
+var x=0;
+var y=400;
+function setup() {
+  createCanvas(400, 400);
 }
 
-function draw()
-{
-
-  background(0,255,255)
-  fill(255,121,1,180);
-  ellipse(circle1.x,circle1.y,circle1.diameter);
+function draw() {
+  r=map(mouseX,0,400,0,255);
+  g=map(mouseY,0,400,255,0);
+  b=map(mouseX,0,400,255,0);
+  background(r,g,b);
   
-  
- 
-  fill(255,121,1,180);
-  ellipse(circle2.x,circle2.y,circle2.diameter);
-  
-
-   
-}
-
-function mousePressed(){
-  
-  background(0,255,255)
-   
+  fill(255,0,0);
+  ellipse(x++,200,40,40);
+  if(x>400){
+    noLoop();
+  }
+  ellipse(y--,200,40,40);
 }
