@@ -1,17 +1,24 @@
+var circleX=0;
+var circleY=0;
+
 function setup()
 {
     createCanvas(400,300)
-    background(0,255,255)
+    
    
 }
 
 function draw()
 {
 
-  
-  noStroke();
+  background(0,255,255)
   fill(255,121,1,180);
-  ellipse(mouseX,mouseY,15,15);
+  ellipse(circleX,circleY,15,15);
+  circleX+=1;
+  circleY+=3;
+  if(circleY>=300){
+    circleY-=30;
+  }
    
 }
 
