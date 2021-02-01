@@ -11,11 +11,13 @@ function draw() {
   background(125,214,247);
 
   for(let i=0;i<obs.length;i++){
+    if(obs[i].collide(bird)){
+        console.log("Collision");
+        noLoop();
+      }
       obs[i].update();
       obs[i].show();
-      if(obs[i].collide(bird)){
-        console.log("Collision")
-      }
+      
      
   }
   bird.update();
@@ -30,7 +32,7 @@ function draw() {
   }
   console.log(obs.length)
   
-  noLoop()
+  
 }
 
 
