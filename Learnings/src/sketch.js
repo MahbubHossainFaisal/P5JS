@@ -1,20 +1,27 @@
 let bird ;
+var obs = []
 function setup() {
   createCanvas(800, 700);
   
    bird=new Bird();
-   obs = new Obstacle();
+   obs.push(new Obstacle());
 }
 
 function draw() {
   background(125,214,247);
 
-  obs.update();
-  obs.show();
-  
+  for(let i=0;i<obs.length;i++){
+      obs[i].update();
+      obs[i].show();
+
+  }
   bird.update();
   bird.show();
-  
+
+  if(frameCount % 80 == 0){
+    obs.push(new Obstacle());
+  }
+  noLoop();
   
 }
 
