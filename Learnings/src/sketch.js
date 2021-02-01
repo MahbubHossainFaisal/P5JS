@@ -1,32 +1,42 @@
-
+var x=0;
+var speedX=5;
+var y=0;
+var speedY=5;
 function setup() {
   createCanvas(400, 400);
-   background(0);
+   
 }
 
 function draw() {
-  let x=100;
-  let y=200;
- 
   
   
+  background(255);
   stroke(0,0,0);
-  fill(255,255,255);
-  ellipse(x,y,30,30);
-  noFill();
+  fill(255,0,0);
+  ellipse(x,200,30,30);
   
-  noStroke();
-  
-  
-  
-  if(mouseX>200 && mouseY<300){
-    fill(0,0,255,80);
+  if(x>=width){
+    speedX=-5;
   }
-  if(mouseY>200){
-    fill(255,10,10);
+  
+  x+=speedX;
+  
+  if(x<=0){
+    speedX=5
   }
-  ellipse(x+40,y+50,30,30)
- 
+  stroke(0,0,0);
+  fill(255,0,0);
+  ellipse(200,y,30,30);
+  if(y>=height){
+    speedY=-5;
+  }
+  
+  y+=speedY;
+  
+  if(y<=0){
+    speedY=5;
+  }
+  
   
   
 }
