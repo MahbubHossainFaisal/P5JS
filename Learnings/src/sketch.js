@@ -13,16 +13,24 @@ function draw() {
   for(let i=0;i<obs.length;i++){
       obs[i].update();
       obs[i].show();
-
+      if(obs[i].collide(bird)){
+        console.log("Collision")
+      }
+     
   }
   bird.update();
   bird.show();
 
   if(frameCount % 80 == 0){
     obs.push(new Obstacle());
+    
   }
-  noLoop();
+  if(obs.length>5){
+    obs.shift();
+  }
+  console.log(obs.length)
   
+  noLoop()
 }
 
 
@@ -31,3 +39,4 @@ function keyPressed(){
     bird.up();
   }
 }
+
