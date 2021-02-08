@@ -11,6 +11,7 @@ function draw(){
     plane.show()
     plane.turn()
     plane.update()
+    plane.boundaries()
 }
 
 function keyReleased(){
@@ -25,5 +26,5 @@ function keyPressed(){
     } else if(keyCode == UP_ARROW){
         plane.applyForce();
         
-    }
+    } 
 }

@@ -19,7 +19,7 @@ class Plane {
 
     applyForce() {
         let f = p5.Vector.fromAngle(this.h)
-        f.mult(0.5)
+        f.mult(0.3)
         this.velocity.add(f);
 
     }
@@ -30,5 +30,17 @@ class Plane {
 
     turn(){
         this.h += this.rotation;
+    }
+
+    boundaries(){
+        if(this.position.x > width+this.r){
+            this.position.x = -this.r;
+        }else if(this.position.x < -this.r){
+            this.position.x = width+this.r;
+        } else if(this.position.y > height+this.r){
+            this.position.y = -this.r;
+        } else if(this.position.y < -this.r){
+            this.position.y = height+this.r;
+        }
     }
 }
