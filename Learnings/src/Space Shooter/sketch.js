@@ -10,6 +10,7 @@ function draw(){
     background(0)
     plane.show()
     plane.turn()
+    plane.update()
 }
 
 function keyReleased(){
@@ -21,5 +22,8 @@ function keyPressed(){
         plane.setRotation(0.1)
     } else if(keyCode == LEFT_ARROW){
         plane.setRotation(-0.1)
+    } else if(keyCode == UP_ARROW){
+        plane.applyForce();
+        
     }
 }

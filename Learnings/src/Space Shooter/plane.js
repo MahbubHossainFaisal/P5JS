@@ -4,12 +4,24 @@ class Plane {
         this.r = 30;
         this.h = 0;
         this.rotation = 0;
+        this.velocity = createVector(0,0);
     }
     show(){
         fill(255,0,0)
         translate(this.position.x, this.position.y)
-        rotate(this.h+PI/2);
+        rotate(this.h + PI/2);
         triangle(-this.r, this.r, this.r, this.r, 0, -this.r)
+    }
+
+    update(){
+        this.position.add(this.velocity)
+    }
+
+    applyForce() {
+        let f = p5.Vector.fromAngle(this.h)
+        f.mult(0.5)
+        this.velocity.add(f);
+
     }
     
     setRotation(x){
