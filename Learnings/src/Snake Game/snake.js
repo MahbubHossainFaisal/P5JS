@@ -1,25 +1,20 @@
-class Snake {
-    constructor() {
-        this.x = 0;
-        this.y = 0;
-        this.xSpeed = 1;
-        this.ySpeed = 0;
-    }
+function Snake() {
+    this.x = 0;
+    this.y = 0;
+    this.xSpeed = 1;
+    this.ySpeed = 0;
 
-    update() {
-        this.x = this.x + this.xSpeed
-        this.y = this.y + this.ySpeed
+    this.dir = function (x,y) {
+        this.xSpeed = x;
+        this.ySpeed = y;
     }
-
-    show() {
-        fill(255)
-        rect(this.x,this.y,10,10)
+    
+    this.update = function () {
+        this.x = this.x + this.xSpeed;
+        this.y = this.y + this.ySpeed;
     }
-
-    direction(a,b) {
-        //this.xSpeed = 0;
-        this.xSpeed = a;
-        //this.ySpeed = 0;
-        this.ySpeed = b;
+    this.show = function() {
+        fill(255);
+        rect(this.x,this.y,10,10);
     }
 }

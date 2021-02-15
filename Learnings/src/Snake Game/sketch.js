@@ -14,12 +14,15 @@ function draw() {
 
 function keyPressed() {
     if(keyCode === UP_ARROW){
-        snake.direction(0,-1)
-    } else if(keyCode === DOWN_ARROW){
-        snake.direction(0,1)
-    } else if(KeyCode === ENTER){
-        snake.direction(-1,0)
-    } else if(keyCode === BACKSPACE){
-        snake.direction(1,0)
+        snake.dir(0,-1)
+    }
+    if(keyCode === DOWN_ARROW){
+        snake.dir(0,1)
+    } 
+    if(keyIsDown(LEFT_ARROW)){
+        snake.dir(-1,0)
+    }
+    if(keyIsDown(RIGHT_ARROW)){
+        snake.dir(1,0)
     }
 }
