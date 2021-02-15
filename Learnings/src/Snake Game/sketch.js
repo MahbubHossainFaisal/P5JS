@@ -1,5 +1,5 @@
 var snake ;
-var scl = 10;
+var scl = 20;
 var food;
 function setup () {
     createCanvas(600, 600)
@@ -14,7 +14,9 @@ function draw() {
     
     snake.update()
     snake.show()
-    
+    if(snake.eat(food)){
+        foodloaction();
+    }
     fill(255,255,0)
     rect(food.x,food.y,scl,scl)
    

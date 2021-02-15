@@ -7,7 +7,16 @@ class Snake {
         this.ySpeed = 0;
         
     }
-   
+    
+    eat(pos) {
+        var d = dist(this.x,this.y,pos.x,pos.y)
+        if(d === 0){
+            return true
+        } else {
+            return false
+        }
+    }
+
     update() {
         this.x = this.x + this.xSpeed*scl
         this.y = this.y + this.ySpeed*scl
@@ -18,7 +27,7 @@ class Snake {
 
     show() {
         fill(255)
-        rect(this.x,this.y,10,10)
+        rect(this.x,this.y,scl,scl)
     }
 
     direction(a,b) {
