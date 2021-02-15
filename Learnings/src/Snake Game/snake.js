@@ -15,4 +15,11 @@ class Snake {
         fill(255)
         rect(this.x,this.y,10,10)
     }
+
+    direction(a,b) {
+        //this.xSpeed = 0;
+        this.xSpeed = a;
+        //this.ySpeed = 0;
+        this.ySpeed = b;
+    }
 }
