@@ -1,15 +1,31 @@
 var snake ;
 var scl = 10;
+var food;
 function setup () {
     createCanvas(600, 600)
     snake = new Snake()
+    frameRate(8)
+    foodloaction()
 }
 
 function draw() {
-    
+     
     background(51)
+    
     snake.update()
     snake.show()
+    
+    fill(255,255,0)
+    rect(food.x,food.y,scl,scl)
+   
+}
+
+function foodloaction() {
+    var col = floor(width/scl)
+    var row = floor(height/scl)
+
+    food = createVector(floor(random(col)),floor(random(row)))
+    food.mult(scl)
 }
 
 function keyPressed() {

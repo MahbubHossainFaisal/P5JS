@@ -5,14 +5,15 @@ class Snake {
         this.y = 0;
         this.xSpeed = 1;
         this.ySpeed = 0;
+        
     }
-
+   
     update() {
         this.x = this.x + this.xSpeed*scl
         this.y = this.y + this.ySpeed*scl
 
-        this.x = constrain(this.x, 0, width-scl)
-        this.y = constrain(this.y, 0, height-scl)
+        this.x = constrain(this.x, 0, width-scl/2)
+        this.y = constrain(this.y, 0, height-scl/2)
     }
 
     show() {
