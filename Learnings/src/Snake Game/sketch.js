@@ -1,4 +1,5 @@
 var snake ;
+var scl = 10;
 function setup () {
     createCanvas(600, 600)
     snake = new Snake()
