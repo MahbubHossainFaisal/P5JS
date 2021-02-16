@@ -14,6 +14,9 @@ function draw() {
     
     snake.update()
     snake.show()
+    snake.boundary()
+    snake.dead()
+    
     if(snake.eat(food)){
         foodloaction();
     }
