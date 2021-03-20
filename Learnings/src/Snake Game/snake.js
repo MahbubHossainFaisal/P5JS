@@ -33,16 +33,12 @@ class Snake {
     update() {
         if(this.total === this.tail.length){
             for(var i = 0 ; i<this.tail.length; i++){
-                this.tail[i] = this.tail[i+1]
-                
+                this.tail[i] = this.tail[i+1]          
             }
         }
         this.tail[this.total-1] = createVector(this.x,this.y)
-        
-
         this.x = this.x + this.xSpeed*scl
         this.y = this.y + this.ySpeed*scl
-
         this.x = constrain(this.x, -1, width-scl)
         this.y = constrain(this.y, -1, height-scl)
     }
