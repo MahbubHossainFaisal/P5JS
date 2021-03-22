@@ -21,7 +21,10 @@ function draw(){
     for(let i = 0 ; i <= 1 ; i=i+0.1){
         xm = map(i,0,1,0,width)
         ym = map(0,0,1,height,0)
-        line(xm,ym,xm,ym)
+        stroke(0)
+        strokeWeight(2)
+        text(i.toFixed(1),xm+3,ym)
+        line(xm,ym,xm,ym-height)
 
     }
 
