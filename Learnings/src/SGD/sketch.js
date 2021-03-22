@@ -22,9 +22,25 @@ function draw() {
         ellipse(x, y, 10, 10)
     }
 
+    if(arr.length > 0){
+        SGD()
+    }
+
     predictedLine()
     calcDistance()
 
+}
+
+function SGD() {
+    let learningRate = 0.01
+    for (let i = 0; i < arr.length; i++) {
+        let x = arr[i].x
+        let y = arr[i].y
+        let g = m * x + b
+        let er = y - g
+        m = m + (er * x) * learningRate
+        b = b + er * learningRate
+    }
 }
 
 function calcDistance() {
@@ -42,7 +58,7 @@ function calcDistance() {
         y2 = map(y2, 0, 1, height, 0)
         stroke(arr[i].r, arr[i].g, arr[i].b)
         strokeWeight(1)
-        line(x1,y1,x2,y2)
+        line(x1, y1, x2, y2)
     }
 }
 
