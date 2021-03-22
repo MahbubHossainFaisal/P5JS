@@ -23,8 +23,27 @@ function draw() {
     }
 
     predictedLine()
+    calcDistance()
 
+}
 
+function calcDistance() {
+    let y // y = mx+c
+    for (let i = 0; i < arr.length; i++) {
+        let intercept = m * arr[i].x + b
+        let x1 = arr[i].x
+        let y1 = arr[i].y
+        let x2 = arr[i].x
+        let y2 = intercept
+
+        x1 = map(x1, 0, 1, 0, width)
+        y1 = map(y1, 0, 1, height, 0)
+        x2 = map(x2, 0, 1, 0, width)
+        y2 = map(y2, 0, 1, height, 0)
+        stroke(arr[i].r, arr[i].g, arr[i].b)
+        strokeWeight(1)
+        line(x1,y1,x2,y2)
+    }
 }
 
 function predictedLine() {
@@ -33,13 +52,18 @@ function predictedLine() {
     let x2 = 1
     let y2 = m * x2 + b
 
-    x1 = map(x1,0,1,0,width)
-    y1= map(y1,0,1,height,0)
-    x2 = map(x2,0,1,0,width)
-    y2=map(y2,0,1,height,0)
-    stroke(255,0,0)
+    x1 = map(x1, 0, 1, 0, width)
+    y1 = map(y1, 0, 1, height, 0)
+    x2 = map(x2, 0, 1, 0, width)
+    y2 = map(y2, 0, 1, height, 0)
+
+    stroke(255, 0, 0)
     strokeWeight(3)
     line(x1, y1, x2, y2)
+
+    str = 'Y = ' + m.toFixed(2) + ' X + ' + b.toFixed(2)
+    textSize(20)
+    text(str, 100, 60)
 }
 
 function mousePressed() {
@@ -62,9 +86,10 @@ function axis() {
     for (let i = 0; i <= 1; i = i + 0.1) {
         xm = map(i, 0, 1, 0, width)
         ym = map(0, 0, 1, height, 0)
+        fill(0)
         stroke(100)
         strokeWeight(1)
-        text(i.toFixed(1), xm + 3, ym)
+        text(i.toFixed(1), xm, ym)
         stroke(200)
         strokeWeight(1)
         line(xm, ym, xm, ym - height)
@@ -85,7 +110,7 @@ function axis() {
         ym = map(i, 0, 1, height, 0)
         stroke(100)
         strokeWeight(1)
-        text(i.toFixed(1), xm, ym - 3)
+        text(i.toFixed(1), xm, ym)
         stroke(200)
         strokeWeight(2)
         line(xm, ym, xm + width, ym)
