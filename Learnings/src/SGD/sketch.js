@@ -1,14 +1,14 @@
 
 function setup() {
-    
-    let cnv = createCanvas(600,600)
+
+    let cnv = createCanvas(600, 600)
     cnv.parent('sketch-holder')
 }
 
-function draw(){
-   
+function draw() {
+
     background(220)
-    
+
     let x1 = 0
     let x2 = 0
     let y1 = 1
@@ -16,15 +16,34 @@ function draw(){
 
     stroke(0)
     strokeWeight(5)
-    line(x1,y1,x2,y2)
+    line(x1, y1, x2, y2)
 
-    for(let i = 0 ; i <= 1 ; i=i+0.1){
-        xm = map(i,0,1,0,width)
-        ym = map(0,0,1,height,0)
+    for (let i = 0; i <= 1; i = i + 0.1) {
+        xm = map(i, 0, 1, 0, width)
+        ym = map(0, 0, 1, height, 0)
         stroke(0)
         strokeWeight(2)
-        text(i.toFixed(1),xm+3,ym)
-        line(xm,ym,xm,ym-height)
+        text(i.toFixed(1), xm + 3, ym)
+        line(xm, ym, xm, ym - height)
+
+    }
+
+    x1 = 0
+    x2 = 0
+    y1 = 0
+    y2 = 1
+
+    stroke(0)
+    strokeWeight(5)
+    line(x1, y1, x2, y2)
+
+    for (let i = 0; i <= 1; i = i + 0.1) {
+        xm = map(0, 0, 1, 0, width)
+        ym = map(i, 0, 1, height, 0)
+        stroke(0)
+        strokeWeight(2)
+        text(i.toFixed(1), xm, ym-3)
+        line(xm, ym, xm + width, ym)
 
     }
 
